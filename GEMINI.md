@@ -1,24 +1,17 @@
-# Configuration Directory Overview
+# Directory Overview
 
-This directory (`/home/rio/.config/`) serves as a central repository for various application configurations. It primarily contains personalized settings and plugins for command-line tools and editors.
+This directory (`/home/rio/.config`) serves as a central location for various application configuration files. It contains personalized settings and configurations for different tools and applications used on the system.
 
-## Key Directories and Their Purpose:
+# Key Directories and Files
 
-*   **`lvim/`**: Contains the configuration files for LunarVim, a popular Neovim distribution.
-    *   `config.lua`: The main configuration file for LunarVim, including custom settings, keybindings, and plugin configurations (e.g., `tokyonight.nvim`, `vim-dadbod-ui`).
-    *   `lazy-lock.json`: Managed by `lazy.nvim`, recording exact plugin versions for reproducibility.
-*   **`nvim/`**: Houses the configuration for Neovim, specifically utilizing the LazyVim distribution.
-    *   `init.lua`: The primary entry point for the Neovim configuration, bootstrapping LazyVim and its plugins.
-    *   `lua/config/`: Contains modular configuration files for autocmds, keymaps, lazy.nvim setup, and general options.
-    *   `lua/plugins/`: Stores configurations for various Neovim plugins (e.g., colorschemes, database tools, toggleterm).
-    *   `lazy-lock.json`: Managed by `lazy.nvim`, ensuring reproducible plugin environments.
-*   **`htop/`**: Configuration files for `htop`, an interactive process viewer.
-*   **`kitty/`**: Configuration files for `kitty`, a GPU-accelerated terminal emulator.
-*   **`neofetch/`**: Configuration files for `neofetch`, a command-line system information tool.
-*   **`configstore/`**: Likely contains configuration data for various Node.js-based CLI tools, often related to update notifications.
+*   **`nvim/`**: This directory contains the configuration for Neovim, specifically tailored for NvChad users. It leverages NvChad as a plugin and includes custom settings for themes, key mappings, and general Neovim options.
+    *   `nvim/README.md`: Provides an overview of the Neovim configuration, its purpose, and credits.
+    *   `nvim/lua/chadrc.lua`: Overrides default NvChad configurations, such as the color theme.
+    *   `nvim/lua/mappings.lua`: Defines custom keybindings for Neovim, enhancing workflow and productivity.
+    *   `nvim/lua/options.lua`: Contains additional Neovim options and settings.
+*   **`.gitignore`**: Specifies intentionally untracked files that Git should ignore.
+*   **Other Configuration Directories**: The directory also contains configurations for other tools like `configstore/`, `create-next-app-nodejs/`, `github-copilot/`, `htop/`, `kitty/`, `lazygit/`, `nextjs-nodejs/`, and `procps/`. These directories hold specific settings for their respective applications.
 
-## Usage:
+# Usage
 
-To apply changes made to any of these configuration files, typically a restart of the respective application is required. For Neovim and LunarVim, plugin management is handled via `lazy.nvim` commands (e.g., `:Lazy sync`, `:Lazy clean` within the editor).
-
-This directory is intended for personal customization and management of development environment settings.
+The files within this `.config` directory are automatically loaded and utilized by their corresponding applications. For example, the `nvim/` directory's contents configure the behavior and appearance of Neovim. Users typically modify these files to customize their application experience.
