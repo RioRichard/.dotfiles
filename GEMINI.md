@@ -10,7 +10,6 @@ This directory (`/home/rio/.config`) serves as a central location for various ap
     *   `nvim/lua/mappings.lua`: Defines custom keybindings for Neovim, enhancing workflow and productivity.
     *   `nvim/lua/options.lua`: Contains additional Neovim options and settings.
 *   **`.gitignore`**: Specifies intentionally untracked files that Git should ignore.
-*   **Other Configuration Directories**: The directory also contains configurations for other tools like `configstore/`, `create-next-app-nodejs/`, `github-copilot/`, `htop/`, `kitty/`, `lazygit/`, `nextjs-nodejs/`, and `procps/`. These directories hold specific settings for their respective applications.
 
 # Usage
 
