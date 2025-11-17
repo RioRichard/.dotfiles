@@ -1,6 +1,24 @@
 require("nvchad.configs.lspconfig").defaults()
+require "configs.import_lsp"
+-- local servers = { "html", "cssls" }
+local servers = {
+  html = {},
+  cssls = {},
+  ruff = {},
+}
 
-local servers = { "html", "cssls" }
-vim.lsp.enable(servers)
+-- powershell
+local powershell_es_bundle_path = "~/Downloads/PowerShellES/"
+local powershell_module = "powershell_es"
+local powershell_config = {
+  {
+    root_markers = { ".ps1", ".psm", ".psd1" },
+    bundle_path = powershell_es_bundle_path,
+  },
+}
+servers[powershell_module] = powershell_config
 
--- read :h vim.lsp.config for changing options of lsp servers 
+for name, opts in pairs(servers) do
+  vim.lsp.config(name, opts)
+  vim.lsp.enable(name)
+end

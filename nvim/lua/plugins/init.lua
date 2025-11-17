@@ -1,4 +1,5 @@
 return {
+  -- table.insert(servers, mason)
   {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- uncomment for format on save
@@ -24,6 +25,12 @@ return {
     "nvim-treesitter/nvim-treesitter",
     config = function()
       require("nvim-treesitter.install").compilers = { "zig", "gcc", "clang" }
+      require("nvim-treesitter.configs").setup {
+        hightlight = {
+          enable = true,
+        },
+        auto_install = true,
+      }
     end,
   },
 }
