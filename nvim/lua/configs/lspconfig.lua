@@ -5,6 +5,14 @@ local servers = {
   html = {},
   cssls = {},
   ruff = {},
+  pyright = {
+    settings = {
+      python = {
+        pythonPath = vim.fn.exepath "python3",
+      },
+    },
+  },
+  vlts = {},
 }
 
 -- powershell
