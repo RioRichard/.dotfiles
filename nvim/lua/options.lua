@@ -6,7 +6,7 @@ local g = vim.g
 local o = vim.o
 local opt = vim.opt
 
-o.cursorlineopt = "both" -- to enable cursorline!
+-- o.cursorlineopt = "both" -- to enable cursorline!
 o.swapfile = false
 
 g.autoformat = true
@@ -30,6 +30,4 @@ if os.getenv "WSL_INTEROP" or os.getenv "WSL_DISTRO_NAME" then
       ["*"] = no_paste "*",
     },
   }
-else
-  g.clipboard = "unnamedplus"
 end
