@@ -4,19 +4,32 @@ require "nvchad.options"
 
 local g = vim.g
 local o = vim.o
+local opt = vim.opt
+
 o.cursorlineopt = "both" -- to enable cursorline!
+o.swapfile = false
+
+g.autoformat = true
+opt.undofile = true
+opt.undolevels = 10000
+opt.spelllang = { "en", "vi", "zh" }
+opt.smoothscroll = true
 
 if os.getenv "WSL_INTEROP" or os.getenv "WSL_DISTRO_NAME" then
+  local function no_paste(reg)
+    return function(lines) end
+  end
   g.clipboard = {
-    name = "WslClipboard",
+    name = "OSC 52",
     copy = {
-      ["+"] = "clip.exe",
-      ["*"] = "clip.exe",
+      ["+"] = require("vim.ui.clipboard.osc52").copy "+",
+      ["*"] = require("vim.ui.clipboard.osc52").copy "*",
     },
     paste = {
-      ["+"] = "powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().require('`r`'), '')",
-      ["*"] = "powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().require('`r`'), '')",
+      ["+"] = no_paste "+",
+      ["*"] = no_paste "*",
     },
-    cache_enabled = 0,
   }
+else
+  g.clipboard = "unnamedplus"
 end
