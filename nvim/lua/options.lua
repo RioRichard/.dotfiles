@@ -31,3 +31,12 @@ if os.getenv "WSL_INTEROP" or os.getenv "WSL_DISTRO_NAME" then
     },
   }
 end
+
+-- Enable visual line wrapping
+opt.wrap = true
+-- Break lines at the end of words instead of in the middle of them
+opt.linebreak = true
+-- Disable the display of whitespace characters, which can look messy with wrapping
+opt.list = false
+-- Preserve indentation on wrapped lines
+opt.breakindent = true

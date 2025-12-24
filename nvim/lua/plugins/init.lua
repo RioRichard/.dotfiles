@@ -5,6 +5,14 @@ return {
     event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
+  -- For `plugins/markview.lua` users.
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+
+    -- Completion for `blink.cmp`
+    -- dependencies = { "saghen/blink.cmp" },
+  },
 
   -- These are some examples, uncomment them if you want to see them work!
   {

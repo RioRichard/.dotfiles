@@ -12,18 +12,16 @@ local servers = {
       },
     },
   },
-  vlts = {},
 }
 
 -- powershell
 local powershell_es_bundle_path = "~/Downloads/PowerShellES/"
 local powershell_module = "powershell_es"
 local powershell_config = {
-  {
-    root_markers = { ".ps1", ".psm", ".psd1" },
-    bundle_path = powershell_es_bundle_path,
-  },
+  root_markers = { ".ps1", ".psm", ".psd1" },
+  bundle_path = powershell_es_bundle_path,
 }
+
 servers[powershell_module] = powershell_config
 
 for name, opts in pairs(servers) do
